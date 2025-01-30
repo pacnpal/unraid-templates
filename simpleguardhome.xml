@@ -28,6 +28,6 @@ GitHub Repo: https://github.com/pacnpal/simpleguardhome</Overview>
   <Config Name="Adguard Home Username" Target="ADGUARD_USERNAME" Default="" Mode="" Description="The username for the Adguard Home user." Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Adguard Home Password" Target="ADGUARD_PASSWORD" Default="" Mode="" Description="The password for the Adguard Home user." Type="Variable" Display="always" Required="true" Mask="true"/>
   <Config Name="SimpleGuardHome WebUI Port" Target="8000" Default="8000" Mode="tcp" Description="Port that SimpleGuardHome will be accessed at." Type="Port" Display="always" Required="true" Mask="false"/>
-  <Config Name="Rules Backup Path" Target="/app/rules_backup" Default="/mnt/user/appdata/simpleguardhome/" Mode="rw" Description="The path where SimpleGuardHome will backup rules." Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Rules Backup Path" Target="/app/rules_backup" Default="/mnt/user/appdata/simpleguardhome" Mode="rw" Description="The path where SimpleGuardHome will backup rules." Type="Path" Display="always" Required="true" Mask="false"/>
   <TailscaleStateDir/>
 </Container>
