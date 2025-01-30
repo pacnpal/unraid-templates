@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>SimpleGuardHome</Name>
+  <Repository>https://github.com/pacnpal/simpleguardhome</Repository>
+  <Registry>https://hub.docker.com/repository/docker/pacnpal/simpleguardhome</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/</Support>
+  <Project>https://github.com/pacnpal/simpleguardhome</Project>
+  <Overview>A modern web application for checking and adding domains to custom filtering rules in AdGuard Home. Built with FastAPI and modern JavaScript, following the official AdGuard Home OpenAPI specification. Meant as a simple AdGuard Home web interface for users to check if a domain is blocked, and then add it.&#xD;
+&#xD;
+GitHub Repo: https://github.com/pacnpal/simpleguardhome</Overview>
+  <Category>HomeAutomation: Tools: Network:Web Network:Management Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/pacnpal/simpleguardhome/refs/heads/main/static/simpleguardhome.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1738252677</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Adguard Home URL" Target="AGUARD_HOST" Default="http://localhost" Mode="" Description="The full URL of your hosted Adguard Home instance." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Adguard Home Port" Target="ADGUARD_PORT" Default="3000" Mode="" Description="The port used to connect to your Adguard Home instance." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Adguard Home Username" Target="ADGUARD_USERNAME" Default="" Mode="" Description="The username for the Adguard Home user." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Adguard Home Password" Target="ADGUARD_PASSWORD" Default="" Mode="" Description="The password for the Adguard Home user." Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="SimpleGuardHome WebUI Port" Target="8000" Default="8000" Mode="tcp" Description="Port that SimpleGuardHome will be accessed at." Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Rules Backup Path" Target="/app/rules_backup" Default="/mnt/user/appdata/simpleguardhome/" Mode="rw" Description="The path where SimpleGuardHome will backup rules." Type="Path" Display="always" Required="true" Mask="false"/>
+  <TailscaleStateDir/>
+</Container>
