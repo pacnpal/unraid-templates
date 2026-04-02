@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://github.com/pacnpal/compressatorium/issues/new</Support>
   <Project>https://github.com/pacnpal/compressatorium</Project>
   <ReadMe/>
   <Overview>ompressatorium is a multi-tool game disc image converter with a web UI. Supports CHDMAN (CD/DVD/LaserDisc to CHD), Dolphin-tool (GameCube/Wii ISO/GCZ/WIA/RVZ/WBFS), and z3ds_compressor (3DS ROM compression). Features batch conversion with progress tracking, nested directory scanning, compressed archive support (ZIP, 7z, RAR), smart duplicate handling, verification, and a REST API. Mount multiple volumes under /data/ to organize different game libraries (e.g. /data/library1, /data/library2).</Overview>
