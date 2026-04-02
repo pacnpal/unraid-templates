@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Compressatorium</Name>
+  <Repository>pacnpal/compressatorium:latest</Repository>
+  <Registry>https://hub.docker.com/r/pacnpal/compressatorium</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/pacnpal/compressatorium</Project>
+  <ReadMe/>
+  <Overview>ompressatorium is a multi-tool game disc image converter with a web UI. Supports CHDMAN (CD/DVD/LaserDisc to CHD), Dolphin-tool (GameCube/Wii ISO/GCZ/WIA/RVZ/WBFS), and z3ds_compressor (3DS ROM compression). Features batch conversion with progress tracking, nested directory scanning, compressed archive support (ZIP, 7z, RAR), smart duplicate handling, verification, and a REST API. Mount multiple volumes under /data/ to organize different game libraries (e.g. /data/library1, /data/library2).</Overview>
+  <Category>Tools: Other:</Category>
+  <WebUI>http://[IP]:[PORT:8090]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/pacnpal/compressatorium/main/static/images/logo.png</Icon>
+  <ExtraParams>--cap-add SYS_NICE</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="8080" Default="8090" Mode="tcp" Description="Port for the web interface" Type="Port" Display="always" Required="true" Mask="false">8090</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/compressatorium" Mode="rw" Description="Persistent application data (verified files DB, metadata cache)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/compressatorium</Config>
+  <Config Name="Games" Target="/data/games" Default="" Mode="rw" Description="Primary game library. Add additional volumes under /data/ for separate libraries. All directories under /data in the container will be automatically mounted, and you can browse and use subdirectories. " Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="More Games" Target="/data/games2" Default="" Mode="rw" Description="Optional: Additional game library" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Log Level" Target="LOGLEVEL" Default="INFO" Mode="" Description="Logs to be shown in the docker logs" Type="Variable" Display="advanced-hide" Required="false" Mask="false">INFO</Config>
+  <Config Name="Maximum Concurrent Jobs" Target="MAX_CONCURRENT_JOBS" Default="1" Mode="" Description="Number of parallel conversion jobs" Type="Variable" Display="advanced-hide" Required="false" Mask="false">1</Config>
+  <TailscaleStateDir/>
+</Container>
