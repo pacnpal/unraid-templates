@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>SimpleGuardHome</Name>
-  <Repository>https://github.com/pacnpal/simpleguardhome</Repository>
+  <Repository>pacnpal/simpleguardhome:latest</Repository>
   <Registry>https://hub.docker.com/repository/docker/pacnpal/simpleguardhome</Registry>
   <Network>bridge</Network>
   <MyIP/>
