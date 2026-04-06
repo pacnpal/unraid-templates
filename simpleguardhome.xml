@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>SimpleGuardHome</Name>
   <Repository>pacnpal/simpleguardhome:latest</Repository>
-  <Registry>https://hub.docker.com/repository/docker/pacnpal/simpleguardhome</Registry>
+  <Registry>https://hub.docker.com/r/pacnpal/simpleguardhome</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
