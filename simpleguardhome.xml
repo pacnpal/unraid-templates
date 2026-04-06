@@ -9,9 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/pacnpal/simpleguardhome/issues/new</Support>
   <Project>https://github.com/pacnpal/simpleguardhome</Project>
-  <Overview>A modern web application for checking and adding domains to custom filtering rules in AdGuard Home. Built with FastAPI and modern JavaScript, following the official AdGuard Home OpenAPI specification. Meant as a simple AdGuard Home web interface for users to check if a domain is blocked, and then add it.&#xD;
-&#xD;
-GitHub Repo: https://github.com/pacnpal/simpleguardhome</Overview>
+  <Overview>A modern web application for checking and adding domains to custom filtering rules in AdGuard Home. Built with FastAPI and modern JavaScript, following the official AdGuard Home OpenAPI specification. Meant as a simple AdGuard Home web interface for users to check if a domain is blocked, and then add it.</Overview>
   <Category>HomeAutomation: Tools: Network:Web Network:Management Status:Stable</Category>
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
   <TemplateURL/>
