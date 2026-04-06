@@ -21,7 +21,7 @@
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="Adguard Home URL" Target="AGUARD_HOST" Default="http://localhost" Mode="" Description="The full URL of your hosted Adguard Home instance." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Adguard Home URL" Target="AGUARD_HOST" Default="http://[IP]" Mode="" Description="The full URL of your hosted Adguard Home instance." Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Adguard Home Port" Target="ADGUARD_PORT" Default="3000" Mode="" Description="The port used to connect to your Adguard Home instance." Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Adguard Home Username" Target="ADGUARD_USERNAME" Default="" Mode="" Description="The username for the Adguard Home user." Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Adguard Home Password" Target="ADGUARD_PASSWORD" Default="" Mode="" Description="The password for the Adguard Home user." Type="Variable" Display="always" Required="true" Mask="true"/>
