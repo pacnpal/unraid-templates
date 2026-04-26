@@ -22,6 +22,25 @@ Key configurations include:
 
 For more details, visit the [project](https://github.com/pacnpal/simpleguardhome) page.
 
+[Compressatorium](https://github.com/pacnpal/compressatorium)
+
+The compressatorium.xml file is an XML template for Unraid, designed to set up and configure Compressatorium. Compressatorium is a multi-tool game disc image converter with a web UI, supporting CHDMAN (CD/DVD/LaserDisc to CHD), Dolphin-tool (GameCube/Wii ISO/GCZ/WIA/RVZ/WBFS), and z3ds_compressor (3DS ROM compression). Features batch conversion with progress tracking, nested directory scanning, compressed archive support (ZIP, 7z, RAR), smart duplicate handling, verification, and a REST API.
+
+Key configurations include:
+
+    Repository: GitHub Repository
+    Docker Registry: Docker Hub
+    Web UI: Accessible at http://[IP]:[PORT:8080]/
+    Configurations:
+        WebUI Port: Port for the web interface (default 8090).
+        Appdata: Persistent application data (verified files DB, metadata cache).
+        Games: Primary game library. Mount additional volumes under /data/ for separate libraries.
+        More Games: Optional additional game library.
+        Log Level: Logs to be shown in the docker logs.
+        Maximum Concurrent Jobs: Number of parallel conversion jobs.
+
+For more details, visit the [project](https://github.com/pacnpal/compressatorium) page.
+
 [WireGuard Watchdog](https://github.com/pacnpal/wireguard-watchdog)
 
 The wg-watchdog.xml file is a Community Applications template for WireGuard Watchdog, an Unraid **plugin** that keeps a WireGuard tunnel healthy. It pings a peer through the tunnel on a schedule and bounces the tunnel via `wg-quick down/up` the moment the peer goes silent. Coexists cleanly with Unraid's built-in WireGuard support -- the watchdog never touches the interface directly, only invokes `wg-quick`.
