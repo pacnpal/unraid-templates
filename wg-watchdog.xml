@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
 <Plugin>True</Plugin>
-<PluginURL>https://github.com/pacnpal/wireguard-watchdog/releases/latest/download/wg-watchdog.plg</PluginURL>
+<PluginURL>https://raw.githubusercontent.com/pacnpal/wireguard-watchdog/main/plugin/wg-watchdog.plg</PluginURL>
 <PluginAuthor>pacnpal</PluginAuthor>
 <Beta>False</Beta>
 <Category>Network:VPN Tools:System</Category>

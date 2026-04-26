@@ -47,7 +47,7 @@ The wg-watchdog.xml file is a Community Applications template for WireGuard Watc
 
 Key configurations include:
 
-    Plugin URL: https://github.com/pacnpal/wireguard-watchdog/releases/latest/download/wg-watchdog.plg
+    Plugin URL: https://raw.githubusercontent.com/pacnpal/wireguard-watchdog/main/plugin/wg-watchdog.plg
     Launch: Tools -> User Utilities -> WireGuard Watchdog
     Minimum Unraid version: 6.12.0
     Configurations:
