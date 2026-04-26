@@ -21,3 +21,22 @@ Key configurations include:
         Rules Backup Path: The path where SimpleGuardHome will backup rules.
 
 For more details, visit the [project](https://github.com/pacnpal/simpleguardhome) page.
+
+[WireGuard Watchdog](https://github.com/pacnpal/wireguard-watchdog)
+
+The wg-watchdog.xml file is a Community Applications template for WireGuard Watchdog, an Unraid **plugin** that keeps a WireGuard tunnel healthy. It pings a peer through the tunnel on a schedule and bounces the tunnel via `wg-quick down/up` the moment the peer goes silent. Coexists cleanly with Unraid's built-in WireGuard support -- the watchdog never touches the interface directly, only invokes `wg-quick`.
+
+Key configurations include:
+
+    Plugin URL: https://github.com/pacnpal/wireguard-watchdog/releases/latest/download/wg-watchdog.plg
+    Launch: Tools -> User Utilities -> WireGuard Watchdog
+    Minimum Unraid version: 6.12.0
+    Configurations:
+        Enabled: Master toggle. Default `no` -- nothing runs until you enable.
+        Tunnel interface: Configured WireGuard interface (e.g. `wg0`).
+        Peer IP to ping: A peer reachable through the tunnel.
+        Check interval: Seconds between checks (minimum 20).
+        Verbose logging: If `yes`, each successful ping is logged too.
+        Log file: `/var/log/wg-watchdog.log` (read-only display in the UI).
+
+For more details, visit the [project](https://github.com/pacnpal/wireguard-watchdog) page.
