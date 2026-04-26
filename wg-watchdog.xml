@@ -13,7 +13,7 @@ WireGuard Watchdog keeps your WireGuard tunnel healthy. It pings a peer through 
 <Date>2026-04-26</Date>
 <MinVer>6.12.0</MinVer>
 <ExtraSearchTerms>wireguard vpn watchdog tunnel ping bounce wg-quick monitor health peer</ExtraSearchTerms>
-<Support>https://github.com/pacnpal/wireguard-watchdog/issues</Support>
+<Support>https://forums.unraid.net/topic/198468-plugin-wireguard-watchdog/</Support>
 <Icon>https://raw.githubusercontent.com/pacnpal/wireguard-watchdog/main/assets/logo-128.png</Icon>
 <Project>https://github.com/pacnpal/wireguard-watchdog</Project>
 </Containers>
