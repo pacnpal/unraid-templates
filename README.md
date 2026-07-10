@@ -41,6 +41,28 @@ Key configurations include:
 
 For more details, visit the [project](https://github.com/pacnpal/compressatorium) page.
 
+<img src="https://raw.githubusercontent.com/pacnpal/mcpelevator/main/assets/mcpelevator.png" width="48" align="absmiddle"> &nbsp; **[mcpelevator](https://github.com/pacnpal/mcpelevator)**
+
+The mcpelevator.xml file is an XML template for Unraid, designed to set up and configure mcpelevator. mcpelevator elevates MCP servers into authenticated HTTP endpoints, self-hosted in one container: it runs stdio MCP servers (`npx`/`uvx` commands) for you and exposes each one as a remote Streamable HTTP endpoint that Claude mobile (or any MCP client) on your network can connect to. Includes a web UI with process supervision, live logs, a registry browser for one-click installs, bearer-token auth, and a Host/Origin guard.
+
+Key configurations include:
+
+    Repository: GitHub Repository
+    Docker Registry: GitHub Container Registry (ghcr.io)
+    Network: Host (so the LAN-access gate sees real client IPs)
+    Web UI: Accessible at http://[IP]:[PORT:8080]/
+    First login: the admin token is printed ONCE to the container log on first start.
+    Configurations:
+        WebUI Port: Port the control plane binds on the host (default 8080).
+        Appdata: Persistent data (SQLite database, npm/uv package caches).
+        Allow LAN Access: First-boot seed so the headless box is reachable from your LAN; turns control-plane auth on.
+        Admin Token (break-glass): Optional token always accepted on /api, for recovery/automation.
+        Public Base URL: Optional absolute URL when behind a tunnel/reverse proxy.
+        Extra Allowed Hosts: Optional extra hostnames for the Host/Origin guard.
+        Mint Admin Token On Boot / Max Running Servers / Start Timeout: Advanced knobs.
+
+For more details, visit the [project](https://github.com/pacnpal/mcpelevator) page and the [Unraid deployment guide](https://github.com/pacnpal/mcpelevator/blob/main/docs/unraid.md).
+
 <img src="https://raw.githubusercontent.com/pacnpal/wireguard-watchdog/main/assets/logo-128.png" width="48" align="absmiddle"> &nbsp; **[WireGuard Watchdog](https://github.com/pacnpal/wireguard-watchdog)**
 
 The wg-watchdog.xml file is a Community Applications template for WireGuard Watchdog, an Unraid **plugin** that keeps a WireGuard tunnel healthy. It pings a peer through the tunnel on a schedule and bounces the tunnel via `wg-quick down/up` the moment the peer goes silent. Coexists cleanly with Unraid's built-in WireGuard support -- the watchdog never touches the interface directly, only invokes `wg-quick`.

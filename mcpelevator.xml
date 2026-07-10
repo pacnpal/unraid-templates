@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>mcpelevator</Name>
+  <Repository>ghcr.io/pacnpal/mcpelevator:latest</Repository>
+  <Registry>https://github.com/pacnpal/mcpelevator/pkgs/container/mcpelevator</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/pacnpal/mcpelevator/issues/new</Support>
+  <Project>https://github.com/pacnpal/mcpelevator</Project>
+  <ReadMe>https://github.com/pacnpal/mcpelevator/blob/main/docs/unraid.md</ReadMe>
+  <Overview>Elevate MCP servers into authenticated HTTP endpoints - self-hosted, in one container. Most MCP servers ship as stdio programs (npx/uvx commands) that phones and remote clients can't spawn. mcpelevator runs them for you and exposes each as a remote Streamable HTTP endpoint that Claude mobile (or any MCP client) on your network can connect to: add a server in the web UI, press start, copy the URL. Batteries included (Node/npx + Python/uv preinstalled), with process supervision, live logs, a registry browser for one-click installs, bearer-token auth, and a Host/Origin guard. Already-remote MCP servers can be proxied behind the same auth too.&#13;&#10;&#13;&#10;FIRST LOGIN: this template enables LAN access, which turns control-plane auth on - the admin token is minted on first start and printed ONCE to the container log. Open the log, copy the token, and log in at http://[unraid-ip]:8080. Host networking is used so the LAN-access gate sees real client IPs (with bridge + port publishing every client would look like the Docker gateway). Full guide: https://github.com/pacnpal/mcpelevator/blob/main/docs/unraid.md</Overview>
+  <Category>Tools: Network:Web Network:Proxy Status:Beta</Category>
+  <WebUI>http://[IP]:8080/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/pacnpal/unraid-templates/main/mcpelevator.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/pacnpal/mcpelevator/main/assets/mcpelevator.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="MCPE_PORT" Default="8080" Mode="" Description="Port the control plane binds on the host. Host networking has no port mapping, so this variable IS the host port - change it if 8080 is already taken, and update the container's WebUI field to match so the WebUI link keeps working." Type="Variable" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Appdata" Target="/data" Default="/mnt/user/appdata/mcpelevator" Mode="rw" Description="Persistent data: SQLite database (servers, tokens, settings) and the npm/uv package caches so installed MCP servers survive restarts." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/mcpelevator</Config>
+  <Config Name="Allow LAN Access" Target="MCPE_ALLOW_PRIVATE_LAN" Default="true" Mode="" Description="First-boot seed for the 'allow access from devices on your local network' setting, so this headless box is reachable at http://[unraid-ip]:8080 right away. Enabling it turns control-plane auth ON: the admin token is printed ONCE to the container log on first start - copy it there to log in. Only seeds the first boot; the toggle in Settings is authoritative afterwards." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Admin Token (break-glass)" Target="MCPE_ADMIN_TOKEN" Default="" Mode="" Description="Optional. A control-plane token that is always accepted on /api. Leave empty normally (a token is minted and printed to the log on first start); set it to recover from a lost token or for automation, then remove it." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="Public Base URL" Target="MCPE_PUBLIC_BASE_URL" Default="" Mode="" Description="Optional. Absolute URL clients use to reach this instance when it sits behind a tunnel or reverse proxy (e.g. https://mcp.example.com). The copy menu hands out endpoint URLs based on it, and its hostname is trusted by the Host/Origin guard." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Extra Allowed Hosts" Target="MCPE_ALLOWED_HOSTS" Default="" Mode="" Description="Optional. Comma-separated extra hostnames the Host/Origin guard always trusts (e.g. a reverse-proxy hostname that resolves to this box). Not needed for plain LAN access by IP." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Mint Admin Token On Boot" Target="MCPE_MINT_ADMIN_TOKEN" Default="false" Mode="" Description="Recovery hatch: set to true to mint a fresh admin token on boot and print it to the container log (existing tokens keep working). Set back to false after grabbing it, or a new token is minted on every restart." Type="Variable" Display="advanced-hide" Required="false" Mask="false">false</Config>
+  <Config Name="Max Running Servers" Target="MCPE_MAX_RUNNING" Default="50" Mode="" Description="Cap on concurrently running MCP servers." Type="Variable" Display="advanced-hide" Required="false" Mask="false">50</Config>
+  <Config Name="Start Timeout (seconds)" Target="MCPE_START_TIMEOUT_S" Default="120" Mode="" Description="Readiness timeout per server start - generous by default to cover npx/uvx cold-start package installs. Raise it for very large packages." Type="Variable" Display="advanced-hide" Required="false" Mask="false">120</Config>
+  <TailscaleStateDir/>
+</Container>
