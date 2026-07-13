@@ -59,6 +59,8 @@ Key configurations include:
         Admin Token (break-glass): Optional token always accepted on /api, for recovery/automation.
         Public Base URL: Optional absolute URL when behind a tunnel/reverse proxy.
         Extra Allowed Hosts: Optional extra hostnames for the Host/Origin guard.
+        Docker Runner (advanced, opt-in, root-equivalent, mcpelevator 1.1.0+): Launch MCP servers packaged as Docker images. OFF by default. To use it, set this true AND give it a Docker endpoint - either add a Path mount /var/run/docker.sock -> /var/run/docker.sock (sibling model), or set Docker Host to a dind daemon.
+        Docker Host (advanced): Optional dind endpoint for the docker runner (empty = use the mounted socket; no effect). Because the container uses HOST networking it cannot resolve Docker service names - use localhost or the host's IP (e.g. tcp://localhost:2375), not a container name like `dind`. A plaintext 2375 endpoint is unauthenticated/root-equivalent: keep it on a strictly private, non-routable network, or use TLS on 2376.
         Mint Admin Token On Boot / Max Running Servers / Start Timeout: Advanced knobs.
 
 For more details, visit the [project](https://github.com/pacnpal/mcpelevator) page and the [Unraid deployment guide](https://github.com/pacnpal/mcpelevator/blob/main/docs/unraid.md).
